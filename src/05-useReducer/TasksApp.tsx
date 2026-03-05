@@ -4,12 +4,19 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Check, Plus, Trash2 } from 'lucide-react';
-import { useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
   // const [todos, setTodos] = useState<Todo[]>([]);
   const [state, dispatch] = useReducer(taskReducer, getTasksInititalState())
+
+  // Effect to save items on localStorge
+  useEffect(() => {
+    localStorage.setItem('task-state', JSON.stringify(state));
+  }, [state]);
+
+
 
 
   const addTodo = () => {
