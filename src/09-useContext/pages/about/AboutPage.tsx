@@ -16,7 +16,7 @@ export const AboutPage = () => {
         { isAuthenticated
           && ( <Link to="/profile" className="hover:text-blue-500 underline text-2xl"> Profile </Link> )
         }
-        {/* Login Logout  */}
+        {/* Login Logout */}
         { isAuthenticated
           ? ( <Button variant='destructive' className="mt/4" onClick={logout}> Exit </Button> )
           : ( <Link to="/login" className="hover:text-blue-500 underline text-2xl"> Login </Link> )

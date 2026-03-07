@@ -49,7 +49,11 @@ export const UserContextProvider = ({children}: PropsWithChildren) => {
 
   useEffect(() => {
     const storeUserId = localStorage.getItem('userId');
-    if (storeUserId) handleLogin(+storeUserId);
+    if (storeUserId) {
+      handleLogin(+storeUserId);
+      return;
+    }
+    handleLogout();
   }, [])
 
 
