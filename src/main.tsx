@@ -1,7 +1,9 @@
-import { StrictMode, Suspense } from 'react'
+import { StrictMode } from 'react'
+import { ProfessionalApp } from '@/09-useContext/ProfessionalApp'
 import { createRoot } from 'react-dom/client'
 import { Toaster } from 'sonner'
-import { ClientInformation } from '@/08-use-suspense/ClientInformation'
+// import { Suspense } from 'react'
+// import { ClientInformation } from '@/08-use-suspense/ClientInformation'
 // import { InstagromApp } from '@/07-useOptimistic/InstagromApp'
 // import { MemoCounter } from '@/06-memos/MemoCounter'
 // import { MemoHook } from '@/06-memos/MemoHook'
@@ -13,8 +15,8 @@ import { ClientInformation } from '@/08-use-suspense/ClientInformation'
 // import { TrafficLight } from './01-useSate/TrafficLight'
 // import { HooksApp } from './HooksApp'
 // import { PokemonPage } from './03-examples/PokemonPage'
+// import { getUserAction } from '@/08-use-suspense/api/get-user.actions'
 import './index.css'
-import { getUserAction } from '@/08-use-suspense/api/get-user.actions'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -28,15 +30,16 @@ createRoot(document.getElementById('root')!).render(
     {/* <ScrambleWords /> */}
     {/* <MemoHook /> */}
     {/* <MemoCounter /> */}
-    {/* <InstagromApp /> */}
     <Toaster />
-    <Suspense fallback={
+    {/* <InstagromApp /> */}
+    {/* <Suspense fallback={
       <div className="bg-gradient flex flex-col gap-4">
         <h1>Loading...</h1>
       </div>
       }>
       <ClientInformation getUser={ getUserAction(1000) } />
-    </Suspense>
+    </Suspense> */}
+  <ProfessionalApp />
 
   </StrictMode>,
 )
