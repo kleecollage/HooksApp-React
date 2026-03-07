@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { InstagromApp } from '@/07-useOptimistic/InstagromApp'
+import { Toaster } from 'sonner'
+
 // import { MemoCounter } from '@/06-memos/MemoCounter'
 // import { MemoHook } from '@/06-memos/MemoHook'
 // import { ScrambleWords } from '@/05-useReducer/ScrambleWords'
@@ -15,6 +17,7 @@ import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Toaster />
     {/* <HooksApp /> */}
     {/* <TrafficLight /> */}
     {/* <TrafficLightWithEffect /> */}
