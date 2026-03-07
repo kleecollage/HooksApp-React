@@ -1,5 +1,17 @@
+import { UserContext } from "@/09-useContext/context/UserContext"
+import { Button } from "@/components/ui/button"
+import { useContext } from "react"
+
 export const ProfilePage = () => {
+  const { user, logout } = useContext(UserContext)
+
   return (
-    <div>ProfilePage</div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-4xl"> User Profile </h1>
+      <hr />
+
+      <pre className="my-4 w-[30%] overflow-x-auto">{JSON.stringify(user, null, 2)}</pre>
+      <Button variant='destructive' onClick={logout}>Exit</Button>
+    </div>
   )
 }
